@@ -1,0 +1,351 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <style>
+      * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+      }
+      .container {
+        display: flex;
+        justify-content: space-between;
+        min-height: 100vh;
+        background-color: rgb(216, 97, 176);
+      }
+      .card-container-one {
+        width: 70%;
+      }
+      .card-container-two {
+        width: 28%;
+      }
+      .one-two-whole {
+        display: flex;
+        height: 48%;
+        justify-content: space-between;
+      }
+      .one-two-whole1 {
+        display: flex;
+        height: 48%;
+        justify-content: space-between;
+      }
+      .one {
+        border: 5px solid blue;
+        width: 79%;
+      }
+
+      .one:first-child {
+        border-left: 0px !important;
+      }
+      .one-two-whole1 .two {
+        border-left: 0px !important;
+      }
+      .one-two-whole .one {
+        border-top: none;
+      }
+      .one-two-whole .two {
+        border-top: none;
+      }
+      .one-two-whole1 .one {
+        border-bottom: none;
+      }
+      .one-two-whole1 .two {
+        border-bottom: none;
+      }
+      .two {
+        border: 5px solid blue;
+        width: 18%;
+      }
+      /* .height-space-div{
+        display: flex;                                  
+        flex-direction: column;
+        justify-content: space-between;        //// this line gives you gap      
+        height: 100vh;                         //// this is flex direction column and space-between-method
+      } */
+
+      .height-space-div {
+        display: flex;
+        flex-direction: column;                 /* this is flex gap method */
+        gap: 30px;
+        height: 100vh;
+      }
+
+      /* .sub-one-card {
+        aspect-ratio: 1 / 1.5;                  //// div height using Aspect-ratio method 
+        width: 20%;                                    
+        border: 5px solid blue;
+      }  */
+
+      .sub-one-card {
+        height: 270px;
+        width: 20%;
+        border: 5px solid blue;
+      }
+
+      .sub-one {
+        display: flex;
+        justify-content: space-evenly;
+        width: 100%;
+      }
+      .sub-one-card-end {
+        height: 340px;
+        display: flex;
+        flex-direction: column;
+        justify-content: end;
+        width: 20%;
+      }
+      .sub-one-card-end .sub-one-card-new {
+        height: 270px;
+        border: 5px solid blue;
+        border-bottom: none;
+        position: relative;
+      }
+      .sub-two {
+        width: 17%;
+        height: 340px;
+        border: 5px solid blue;
+        border-right: none;
+        border-bottom: none;
+        border-top: none;
+      }
+      .sub-one-whole {
+        display: flex;
+        width: 100%;
+      }
+      .card-container-two-card-one {
+        height: 430px;
+
+        border: 5px solid blue;
+      }
+      .card-container-two-card-two {
+        height: 250px;
+
+        border: 5px solid blue;
+      }
+      .card-container-two {
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+      }
+      .sub-one-card-new::after {
+        content: "";
+        position: absolute;
+        width: 135px;
+        height: 5px;
+        background-color: blue;
+        top: 20px;
+      }
+      .white-box {
+        width: 75px;
+        height: 30px;
+        border: 5px solid blue;
+      }
+      .white-box-new {
+        width: 48px;
+        height: 18px;
+        border: 5px solid blue;
+        border-bottom: none;
+      }
+      .white-box-dummy {
+        width: 75px;
+        height: 30px;
+      }
+      /* .white-box-parent {
+        display: grid;
+        place-items: center;                 //// grid approch      
+        height: 263px !important;
+        background-color: aqua;
+      } */
+
+      .white-box-parent {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        flex-direction: column;
+        gap: 90px;
+        height: 263px;
+      }
+      .sub-one-card-first-box {
+        height: 90px;
+        width: auto;
+        border-bottom: 5px solid blue;
+        display: flex;
+        justify-content: center;
+      }
+      .sub-one-card-first-box-child {
+        width: 82%;
+        border-left: 5px solid blue;
+        border-right: 5px solid blue;
+      }
+      .sub-one-card-second-box {
+        height: 171px;
+      }
+      .sub-one-card-second-box-sub-box-one {
+        height: 140px;
+      }
+      .first-set-square {
+        width: 50px;
+        height: 60px;
+        border: 5px solid blue;
+      }
+      .sub-box-one-first-set {
+        display: flex;
+        justify-content: space-around;
+        height: 100px;
+
+        align-items: center;
+      }
+      .sub-box-one-second-set {
+        display: flex;
+        justify-content: space-around;
+      }
+      .sub-one-card-second-box-sub-box-one {
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+      }
+      .small-squares {
+        width: 32px;
+        height: 32px;
+        border: 5px solid blue;
+        border-right: none;
+        border-bottom: none;
+      }
+      .small-squares-container {
+        display: flex;
+      }
+      .small-squares:first-child {
+        border-left: none;
+        width: 28px;
+        height: 30px;
+      }
+      .sub-one-card-new-first-box-child {
+        border-bottom: 5px solid blue;
+        height: 90px;
+      }
+      .sub-one-card-new-content-container {
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+        height: 263px;
+      }
+      .sub-two-first-box {
+        height: 65px;
+        width: 138px;               /* here its a hard code */
+        border: 0px;
+        border-bottom: 5px solid blue !important;
+        display: flex;
+        flex-direction: column;
+        gap: 10px;
+      }
+      .white-box-new-first-set{
+        width: 48px;
+        height: 18px;
+        border: 5px solid blue;
+        border-top: none;
+      }
+      .white-box-new-second-set{
+        width: 48px;
+        height: 22px;
+        border: 5px solid blue;
+      }
+      .white-box-new-first-set-dummy{
+        width: 48px;
+        height: 18px;
+        
+      }
+      .sub-two-first-box-first-set{
+        display: flex;
+        justify-content: space-around;
+       
+      }
+      .sub-two-first-box-second-set{
+        display: flex;
+        justify-content: space-around;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="container">
+      <div class="card-container-one">
+        <div class="height-space-div">
+          <div class="one-two-whole">
+            <div class="one">
+              <div class="sub-one-whole">
+                <div class="sub-one">
+                  <div class="sub-one-card-end">
+                    <div class="sub-one-card-new">
+                      <div class="white-box-parent">
+                        <div class="white-box-dummy"></div>
+                        <div class="white-box"></div>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="sub-one-card">
+                    <div class="sub-one-card-first-box">
+                      <div class="sub-one-card-first-box-child"></div>
+                    </div>
+                    <div class="sub-one-card-second-box">
+                      <div class="sub-one-card-second-box-sub-box-one">
+                        <div class="sub-box-one-first-set">
+                          <div class="first-set-square"></div>
+                          <div class="first-set-square"></div>
+                        </div>
+                        <div class="sub-box-one-second-set">
+                          <div class="white-box-new"></div>
+                          <div class="white-box-new"></div>
+                        </div>
+                      </div>
+                      <div class="small-squares-container">
+                        <div class="small-squares"></div>
+                        <div class="small-squares"></div>
+                        <div class="small-squares"></div>
+                        <div class="small-squares"></div>
+                        <div class="small-squares"></div>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="sub-one-card-end">
+                    <div class="sub-one-card-new">
+                      <div class="sub-one-card-new-content-container">
+                        <div class="sub-one-card-new-first-box-child"></div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+                <div class="sub-two">
+                  <div class="sub-two-first-box">
+                    <div class="sub-two-first-box-first-set">
+                      <div class="white-box-new-first-set"></div>
+                      <div class="white-box-new-first-set"></div>
+                    </div>
+                    <div class="sub-two-first-box-second-set">
+                      <div class="white-box-new-second-set"></div>
+                      <div class="white-box-new-first-set-dummy"></div>
+                    </div>
+                  </div>
+                  <div class="sub-two-second-box"></div>
+                  <div class="sub-two-third-box"></div>
+                </div>
+              </div>
+            </div>
+            <div class="two"></div>
+          </div>
+
+          <div class="one-two-whole1">
+            <div class="two"></div>
+            <div class="one"></div>
+          </div>
+        </div>
+      </div>
+      <div class="card-container-two">
+        <div class="card-container-two-card-one"></div>
+        <div class="card-container-two-card-two"></div>
+      </div>
+    </div>
+  </body>
+</html>
