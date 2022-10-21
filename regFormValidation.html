@@ -1,0 +1,161 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <style>
+      .container {
+        min-height: 100vh;
+        background-color: antiquewhite;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+      }
+      * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+      }
+      small {
+        color: red;
+        display: none;
+      }
+input{
+  padding: 15px 90px 15px 2px;
+  border-radius: 5px;
+  outline: 0px;
+  border: 0px;
+}
+
+input::-webkit-outer-spin-button,
+input::-webkit-inner-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
+}
+
+    </style>
+  </head>
+  <body>
+    <div class="container">
+      <div class="card">
+        <div class="name">
+          <p>Name</p>
+          <input type="text" id="text" onkeyup="fun()" />
+          <small class="name-empty">Name is required</small>
+        </div>
+        <div class="email">
+          <p>email</p>
+          <input type="email" id="email" onkeyup="fun1()" />
+          <small class="email-empty1">email is required</small>
+          <small class="email-empty">please enter valid email</small>
+        </div>
+        <div class="number">
+          <p>number</p>
+          <input type="number" id="number" onkeyup="fun2()" />
+          <small class="number-empty1">Mobile number is Requird</small>
+          <small class="number-empty">Please enter a valid mobile number</small>
+        </div>
+        <div class="password">
+          <p>password</p>
+          <input type="password" id="password" onkeyup="fun3()" />
+          <small class="pass-empty1">password is required</small>
+          <small class="pass-empty"
+            >password Should reach 1 upper case 1 lowercase and spl char</small
+          >
+        </div>
+      </div>
+    </div>
+
+    <script>
+   
+      function fun() {   // Name Validation
+        let nameEmty = document.querySelector(".name-empty");
+        let TextVal = document.getElementById("text").value;
+
+        if (TextVal == "") {
+          nameEmty.style.display = "block";
+        } else if (TextVal !== "") {
+          nameEmty.style.display = "none";
+        }
+      }
+
+      
+      function fun1() {  // Email Validation
+        var mailformat = /^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,3})+$/;
+        let EmailVal = document.getElementById("email").value;
+        let EmailEmpty1 = document.querySelector(".email-empty1");
+        let EmailEmpty = document.querySelector(".email-empty");
+
+        if (EmailVal != "") {
+          EmailEmpty.style.display = "block";
+        }
+
+        if (EmailVal.match(mailformat)) {
+          EmailEmpty.style.display = "none";
+        }
+
+        if (EmailVal == "") {
+          EmailEmpty1.style.display = "block";
+          EmailEmpty.style.display = "none";
+        }
+
+        if (EmailVal != "") {
+          EmailEmpty1.style.display = "none";
+        }
+      }
+
+     
+
+      function fun2() {   // phonenumber Validation
+        var phoneno = /^\d{10}$/;
+        let numberEmty = document.querySelector(".number-empty");
+        let numberEmty1 = document.querySelector(".number-empty1");
+        let NumVal = document.getElementById("number").value;
+
+        if (NumVal != "") {
+          numberEmty.style.display = "block";
+        }
+
+        if (NumVal.match(phoneno)) {
+          numberEmty.style.display = "none";
+        }
+
+        if (NumVal == "") {
+          numberEmty1.style.display = "block";
+          numberEmty.style.display = "none";
+        }
+        if (NumVal != "") {
+          numberEmty1.style.display = "none";
+        }
+      }
+
+     
+
+      function fun3() {   // password validation
+        let passw =
+          /^(?=.*\d)(?=.*[a-z])(?=.*[A-Z])(?=.*[^a-zA-Z0-9])(?!.*\s).{8,15}$/;
+        let PassVal = document.getElementById("password").value;
+        let passEmty = document.querySelector(".pass-empty");
+        let passEmty1 = document.querySelector(".pass-empty1");
+
+        if (PassVal != "") {
+          passEmty.style.display = "block";
+        }
+
+        if (PassVal.match(passw)) {
+          passEmty.style.display = "none";
+        }
+
+        if (PassVal == "") {
+          passEmty1.style.display = "block";
+          passEmty.style.display = "none";
+        }
+        if (PassVal != "") {
+          passEmty1.style.display = "none";
+        }
+      }
+    </script>
+  </body>
+</html>
